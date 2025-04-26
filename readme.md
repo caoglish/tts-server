@@ -24,7 +24,9 @@ docker run -d --name tts-server-container -p 3011:3011 --env-file .env   tencent
 
 # testing with token:
 ```
-fetch("http://127.0.0.1:3011/ping",{headers: {
+//var api_url="http://127.0.0.1:3011/tts/ping"
+var api_url="https://caoglish.com/tts/ping"
+fetch(api_url,{headers: {
 						'Content-Type': 'application/json',
 						'x-access-token': "testing_token_19283",
 					}})
@@ -40,7 +42,12 @@ fetch("http://127.0.0.1:3011/ping",{headers: {
       body: JSON.stringify({ text: '测试语音合成' })
     });
 ```
+# curl testing command:
 
+```
+curl -i -X GET http://127.0.0.1:3011/tts/ping   -H "Content-Type: application/json"  
+ curl -i -X GET http://127.0.0.1:3011/tts/ping   -H "Content-Type: application/json"   -H "x-access-token: testing_token_19283"  
+```
 
 # need to add file
 ```

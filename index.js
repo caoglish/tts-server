@@ -39,7 +39,7 @@ app.post('/tts', async (req, res) => {
   }
 });
 
-app.get('tts/ping', (req, res) => {
+app.get('/tts/ping', (req, res) => {
 	res.json({
 	  status: 'ok',
 	  message: 'TTS server is running.',
